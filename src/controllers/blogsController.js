@@ -80,7 +80,7 @@ const getBlogs=async function(req,res){
             }
             if(isValid(subcategory)){
                 const subcategoryArr=tags.trim().split(',').map(x=>x.trim())
-                query.tags={$all:subcategoryArr}
+                query.subcategory={$all:subcategoryArr}
             }
         }
         const getBlogs=await blogsModel.find(query)
